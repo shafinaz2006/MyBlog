@@ -5,9 +5,9 @@ var mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
 
 // mongoose.connect('mongodb://localhost:27017/myBlogdB_3V', {
-// 														useUnifiedTopology: true,
-// 														useNewUrlParser: true,
-// 														});
+// 								useUnifiedTopology: true,
+// 								useNewUrlParser: true,
+// 								});
 
 mongoose.connect('mongodb+srv://shafis:shafis@cluster0-9fqzb.mongodb.net/test?retryWrites=true&w=majority', {
 					useUnifiedTopology: true,
