@@ -1,26 +1,26 @@
 
 const express  			= require('express'),
-	  app 				= express(),
+	  app 			= express(),
 	  request       	= require('request'),
 	  bodyparser 		= require('body-parser'),
 	  methodOverride 	= require('method-override'),
 	  expressSanitizer 	= require('express-sanitizer'),
-	  mongoose		    = require('mongoose'),
-	  flash 			= require('connect-flash'),
-	  passport 			= require('passport'),
+	  mongoose		= require('mongoose'),
+	  flash 		= require('connect-flash'),
+	  passport 		= require('passport'),
 	  passportLocal 	= require('passport-local'),
 	  passportLocalMongoose = require('passport-local-mongoose'),
-	  blogData 			= require('./models/blogData'),
-	  blogUser 			= require('./models/blogUser'),
+	  blogData 		= require('./models/blogData'),
+	  blogUser 		= require('./models/blogUser'),
 	  blogComment 		= require('./models/blogComment'),
 	  contactData 		= require('./models/contact'),
-	  util 				= require('util'),
+	  util 			= require('util'),
 	  logTimeStamp 		= require('log-timestamp');
 
 var crudBlogRoutes 		= require('./routes/crudBlogRoutes'),
 	crudCommentRoutes 	= require('./routes/crudCommentRoutes'),
 	indexRoutes 		= require('./routes/indexRoutes'),
-	date 				= new Date();
+	date 			= new Date();
 
 app.use(express.static(__dirname + '/public'));
 
