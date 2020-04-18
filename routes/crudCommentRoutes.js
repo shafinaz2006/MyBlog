@@ -1,13 +1,13 @@
 
 var express     	= require('express'),
     router  		= express.Router(),
-	passport 		= require('passport'),
+    passport 		= require('passport'),
     blogData 		= require('../models/blogData'),
-	blogUser 		= require('../models/blogUser'),
-	blogComment		= require('../models/blogComment'),
-	contactData 	= require('../models/contact'),
-	middlewareObj 	= require('../middleware'),  
-	util        	= require('util');
+    blogUser 		= require('../models/blogUser'),
+    blogComment		= require('../models/blogComment'),
+    contactData 	= require('../models/contact'),
+    middlewareObj 	= require('../middleware'),  
+    util        	= require('util');
 
 
 // NEW COMMENT Routes:
@@ -109,9 +109,9 @@ router.put('/blogs/:id/comments/:comment_id', function(req, res){
 	console.log('***: ' + util.inspect(req.body.blogComment, false, null, true /* enable colors */))
 	
 	blogComment.findByIdAndUpdate(req.params.comment_id, 
-								  req.body.blogComment, 
-								  {new: true}, 
-								  function(err, updatedComment){
+				      req.body.blogComment, 
+				      {new: true}, 
+				      function(err, updatedComment){
 		
 		if(err){
 			
