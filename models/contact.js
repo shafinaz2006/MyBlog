@@ -9,8 +9,8 @@ mongoose.set('useFindAndModify', false);
 // 								useUnifiedTopology: true,
 // 								useNewUrlParser: true,
 // 							     });
-
-mongoose.connect('mongodb+srv://shafis:shafis@cluster0-9fqzb.mongodb.net/test?retryWrites=true&w=majority', {
+// mongoDB ATLAS link is required
+mongoose.connect('*****', {
 					useUnifiedTopology: true,
 					useNewUrlParser: true,
 				}).then(() =>{
