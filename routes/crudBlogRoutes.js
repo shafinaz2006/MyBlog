@@ -2,12 +2,12 @@
 
 // require('../middleware/index.js') index.js is not necessary. because, when nothing is mentioned, it points to index file.
 
-const express     	= require('express'),
-      router  		= express.Router(),
+const     express     	= require('express'),
+          router  	= express.Router(),
 	  mongoose      = require('mongoose'),
-	  passport 		= require('passport'),
-      blogData 		= require('../models/blogData'),
-	  blogUser 		= require('../models/blogUser'),
+	  passport 	= require('passport'),
+          blogData 	= require('../models/blogData'),
+	  blogUser 	= require('../models/blogUser'),
 	  blogComment   = require('../models/blogComment'),
 	  contactData 	= require('../models/contact'),  
 	  middlewareObj = require('../middleware'),  
@@ -37,10 +37,10 @@ router.post('/blogs', middlewareObj.isLoggedIn, function(req, res){
 	console.log('newCreatedBy is: ' + util.inspect(newCreatedBy, false, null, true /* enable colors */))
 	
 	var newBlogData = { title : req.body.title, 
-					    image : req.body.image, 
-					    body  : req.body.description, 
-					    createdBy: newCreatedBy
-					  };
+			    image : req.body.image, 
+			    body  : req.body.description, 
+			    createdBy: newCreatedBy
+			};
 	
 	
 	console.log('/blogs/new: POST route. New Data is prepared: ');
