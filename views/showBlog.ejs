@@ -1,0 +1,114 @@
+
+<%- include('partials/header') %>	
+
+
+<div class = 'showBlogPage'>
+
+	<h3><%= blog.title %></h3>
+
+	<h4><em> Created By: <%= blog.createdBy.bloggername %> </em></h4>
+
+	<h4>Created on: <%= blog.created.toDateString() %></h4>
+
+	<img src='<%= blog.image %>' alt = 'image' style = 'height:40%; width: 50%; padding-bottom: 1.5rem;'>
+
+	<p align= 'justify'><%= blog.body %> </p>
+
+	<div>
+
+		<a href = '/blogs' class='btn btn-primary backShowPage' role='button' > Back </a>
+
+		<% if(currentUser && blog.createdBy.id.equals(currentUser._id)){ %>
+
+			<form class= 'editButtonGroup inline' 
+				  action='/blogs/<%= blog._id %>?_method=DELETE', method='POST'>
+
+				<a href = '/blogs/<%= blog._id %>/edit' class='btn btn-warning' role='button'> 
+					Edit Blog
+				</a>
+
+				<div class = 'form-group inline' style = 'margin-left: 10px;'>	
+					<button class = 'btn btn-primary btn-danger'> Delete </button>
+				</div>
+			</form>
+
+		<% } %>
+
+	</div>
+
+	<div class = 'row leaveYourCommentButton'>
+		
+		<div class = 'col-sm-12'>
+			
+			<a href = '/blogs/<%= blog._id %>/comments/new' class='btn btn-primary btn-success' 
+			   role='button' > 
+				
+				Leave your comment
+				
+			</a>
+			
+		</div>
+		
+	</div>
+
+<!--  Comment display section	 -->
+
+	<% blog.comments.forEach(function(comment){ %>
+
+		<div style = 'border-radius: 5px; background-color: rgba(153, 204, 133, 0.5);										margin-bottom: 6px; padding-left: 10px; padding-bottom: 0px;'>
+
+
+			<span style = 'display: block; margin-top: 8px;'> 
+
+				Commented by: <em><strong><%= comment.commentedBy.commenter %></strong></em> 
+
+			</span>
+
+			<span  style = 'display:block; float: right; font-size: 12px; margin-top: 4px; 
+						 padding-right: 10px;'> 
+
+				<%= comment.commentedOn.toDateString() %> 
+
+			</span>
+			<br/>
+			<p style = 'padding-bottom: 0px; padding-right: 10px;'> 
+
+				<%= comment.text %> 
+
+			</p>
+
+			<% if(currentUser && comment.commentedBy.id.equals(currentUser._id)){ %>
+
+				<form  class = 'commentEditButtonGroup' 
+					  action='/blogs/<%= blog._id %>/comments/<%= comment._id %>?_method=DELETE' 
+					  method='POST' style = 'padding-right: 10px;'>
+
+					<a href = '/blogs/<%= blog._id %>/comments/<%= comment._id %>/edit' 
+					   class='btn btn-warning btn-xs py-0' role='button' 
+					   style = 'align: right; font-size: 1rem'> 
+
+						Edit Comment
+
+					</a>
+
+					<div class = 'form-group commentEditButtonGroup'>
+						
+						<button class = 'btn btn-primary btn-danger btn-xs py-0' style = 'font-size: 1rem'> 
+							
+							Delete Comment 
+							
+						</button>
+						
+					</div>
+
+				</form>
+
+			<% }%>
+
+		</div>
+
+	<% }) %>
+
+</div>
+	
+<%- include('partials/footer') %>

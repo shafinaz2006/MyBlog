@@ -1,0 +1,410 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	background-color: rgba(214, 214, 255, 0.4);
+}
+body {
+	background-color: rgba(214, 214, 255, 0.4);
+	font-family: arial, sans-serif;
+	margin: 0; padding: 0;
+	min-height: 100%; width: 100%;
+}
+.headRow {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	background-image: url('https://techcrunch.com/wp-content/uploads/2012/04/clouds.jpg');
+	/* height: 160px; */
+	background-size: 100%;
+}
+.bannerH1 {
+	color: white;
+	font-size: 2.5rem;
+	margin-top: 50px; margin-bottom: 30px;
+	padding-left: 20px;
+}
+h3 {
+	font-size: 1.5rem;
+}
+h4 {
+	font-size: 1.05rem;
+}
+p {
+	font-size: 0.95rem;
+	text-align: justify;
+}
+
+.navbarStyle {
+	background-color: rgba(71, 117, 209, 1);
+	/* background-color: rgba(128,128,128,1);  */
+	color: #fffff0;
+	width: 100%;
+	/* position: fixed; */
+	left: 0;
+	top: 150;
+	text-align: left;
+	padding-left: 25px;
+	z-index: 999;
+}
+
+.nav-link {
+	color: white;
+	font-size: 19px;
+}
+.navbar-toggler {
+	/*position: relative;*/
+	float: left;
+	margin-right: 15px;
+	padding: 9px 10px;
+	margin-top: -5px; margin-bottom: -6px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.toggleIcon {
+	width: 1.5em; height: 1.5em;
+	vertical-align: middle;
+	/* content: ""; */
+	background: no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.mainBody {
+	height: auto; width: 100%;
+	padding-bottom: 1.5rem;
+	/* margin-top: 175px; This is set in JS now */
+	margin-bottom: 1rem;
+}
+
+.sidenavBox {
+	display: flex; flex-direction: column;
+	align-items: center;
+	width: 75%;
+	overflow: hidden;
+	padding-top: 1rem;
+	margin-left: 15%;
+	/* text-overflow: ellipsis; */
+}
+.sidenavBox img{
+	margin-top: 0.5rem;	margin-bottom: 1rem;
+}
+.inline {
+	display: inline;
+	float: right;
+}
+.alertDiv{
+	width: 70%; 
+	margin-top: 1.5rem;
+	margin-left: 15%;
+}
+.indexPageContent{
+	display: flex; flex-direction: column;
+	width: 94%;
+	padding-left: 5%;
+	padding-bottom: 1rem; padding-top: 0.5rem;
+}
+.indexBlogBox {
+	display: flex; flex-direction: column;
+	border-style: solid; border-color: #b3c6ff;
+	/* margin-top: 0.5rem; */
+	padding-top: 1rem; padding-bottom: 0.5rem;
+	padding-left: 1.5rem; margin-bottom: 1.2rem;
+	overflow: hidden;
+}
+.indexMedia {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+}
+.indexImage {
+	width: 35%;
+}
+.indexImage img {
+	height: 85%;
+	width: 90%;
+} 
+.indexBody {
+	width: 60%;
+}
+.btn-warning {
+	background-color: rgba(255, 153, 0, 0.7);
+	color: white;
+}
+.showBlogPage {
+	display: flex; flex-direction: column;
+	width: 90%;
+	justify-content: center;
+	padding-bottom: 1rem;
+	padding-right: 0px;	padding-left: 8%;
+}
+.editButtonGroup {
+}
+.backShowPage {
+}
+.leaveYourCommentButton {
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+.commentEditButtonGroup {
+	float: left;
+	display: block;
+	margin-right: 5px;
+}
+.commentsNewContent {
+	width: 90%;
+	margin-left: 5%;
+	padding-left: 5%; padding-right: 5%;
+	padding-bottom: 1rem; padding-top: 2rem;
+}
+.createBlog{
+	width: 80%;
+	margin-left: 12%
+}
+.loginContent {
+	justify-content: center;
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-top: 10%;
+}
+.rightBarCol {
+	width: 85%;
+	margin-right: 7%;
+	margin-left: 5%;
+	padding-top: 1rem;
+}
+.footerStyle {
+	bottom: 0;
+	position: fixed;
+	display: flex;
+	background-color: #66b3ff;
+	height: 28px;
+	width: 100%;
+	justify-content: flex-end;
+}
+.footerTextDiv {
+	display: flex;
+	font-size: 0.8rem;
+	padding-right: 15px;
+	align-items: center;
+}
+
+/* ************************************************  @media screen and (max-width: 1200px) */
+@media screen and (max-width: 1200px) {
+	
+}
+
+/* ************************************************  @media screen and (max-width: 992px) */
+@media screen and (max-width: 991px) {
+	.indexMedia {
+		display: flex;
+		flex-direction: column;
+	}
+	.indexImage {
+		width: 80%;
+		margin-bottom: 3%;
+	}
+	.indexBody {
+		width: 90%
+	}
+}
+
+/* ************************************************  @media screen and (max-width: 768px) */
+
+@media only screen and (max-width: 767px) {
+	
+	#first{
+		order:2;
+	}
+	#second{
+		order: 1;
+	}
+	#third{
+		order: 3;
+	}
+	.headerImage{
+		/* background-size:20%; */
+		height: 60px;
+	}
+	.bannerH1 {
+		/* color: white;
+		font-size: 1.5rem;
+		padding-top: 15px; */
+		display: none;
+	}
+	.nav-collapse.collapse {
+		height: auto !important;
+		overflow: visible !important;
+		background-color: #4775d1;
+		color: #fffff0;
+	}
+	#rightList {
+		padding-right: 30px;
+	}
+	.contentCol {
+		width: 70%;
+		padding-left: 0px;
+		/* padding-right: 10px; */
+	}
+	.alertDiv{
+		width: 88%;
+		margin-left: 10%;
+	}
+	.sidenavBox {
+		border-style: solid; border-color: #b3c6ff;
+		width: 92%;
+		margin-left: 8%;
+		padding-left: 5%; padding-right: 5%;
+	}
+	.sidenavBox img{
+		width: 75%;
+		height: 75%;
+	}
+	.indexPageContent{
+		width: 92%;
+		margin-left: 8%; 
+		padding-left: 0px; 
+		padding-bottom: 1rem; padding-top: 0.5rem;
+		align-items: center;
+	} 
+	.rightBarCol{
+		border-style: solid; border-color: #b3c6ff;
+		width: 92%;
+		margin-left: 8%; margin-top: 4%;
+		padding-left: 5%; padding-right: 7%;
+	}
+	.list-group{
+		padding-left: 1rem;
+	}
+	.loginContent, .commentsNewContent {
+		border-style: solid; border-color: #b3c6ff;
+		width: 92%;
+		margin-left: 8%; margin-bottom: 1.5rem;
+	}
+	.createBlog{
+		border-style: solid; border-color: #b3c6ff;
+		width: 92%;
+		margin-left: 8%; margin-bottom: 1.5rem;
+		padding-left: 5%; padding-right: 5%; padding-top: 5%;
+	} 
+	.showBlogPage {
+		display: flex;
+		flex-direction: column;
+		border-style: solid; border-color: #b3c6ff;
+		width: 92%;
+		justify-content: center;
+		margin-left: 8%; margin-bottom: 1.5rem;
+		padding-left: 5%; padding-right: 5%; padding-top: 5%;
+	}
+	.commentEditButtonGroup {
+		float: left;
+		display: block;
+		margin-right: 5px;
+		margin-top: 5px;
+	}
+}
+
+/* ************************************************  @media screen and (max-width: 480px) */
+
+@media screen and (max-width: 480px) {
+	
+}
+
+/* ************************************************  @media screen and (max-width: 320px) */
+
+@media screen and (max-width: 320px) {
+	
+	.headerImage {
+		display: none;
+	}
+	.mainBody {
+		margin-top: 20px;
+	}
+	.navbarStyle {
+		position: fixed;
+		top: 0;
+	}
+	.bannerH1 {
+		color: white;
+		font-size: 20px;
+		padding-top: 20px;
+	}
+	.contentCol {
+		width: 100%;
+		padding-left: 0px;
+		/* padding-right: 10px; */
+	}
+	.alertDiv{
+		width: 88%;
+		margin-left: 11%;
+	}
+	.sidenavBox {
+		width: 94%;
+		margin-left: 8%;
+	}
+	.rightBarCol{
+		width: 94%;
+		margin-left: 8%; 
+	}
+	.loginContent, .commentsNewContent {
+		width: 94%;
+	}
+	.indexBlogBox {
+		padding-right: 20px;
+		margin-left: 0px;
+	}
+	.indexMedia {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		margin-top: 10px;
+		padding-bottom: 10px;
+		margin-left: 0px;
+		overflow: hidden;
+	}
+	.indexImage {
+		width: 90%;
+	}
+	.indexBody {
+		width: 100%;
+		/* padding-left: 15px; */
+		text-align: justify;
+	}
+	.createBlog{
+		width: 94%;
+	} 
+	.showBlogPage {
+		display: flex;
+		flex-direction: column;
+		width: 94%;
+		justify-content: center;
+		padding-left: 15px;
+	}
+	.inline {
+		
+	}
+	.backShowPage {
+		margin-top: 6px;
+		float: left;
+	}
+	.editButtonGroup {
+		margin-top: 6px;
+		/* float: right; */
+	}
+
+	.leaveYourCommentButton {
+		float: left;
+	}
+
+	#footerEmail {
+		display: none;
+	}
+	.footerTextDiv {
+		font-size: 0.75em;
+	}
+}

@@ -1,0 +1,50 @@
+<!-- Route: "/blogs" -->
+
+<%- include("partials/header") %>	
+
+<div class="indexPageContent">
+	
+	<% blogs.forEach(function(blog){ %>
+
+		<div class = "indexBlogBox" >
+
+			<h3 ><%= blog.title %></h3> 
+
+			<div class = "indexMedia" >
+				
+				<div class = "indexImage">
+					<img  src="<%= blog.image %>" alt = "image" >
+				</div>
+
+				<div class = "indexBody" >
+					<h4 > 
+						<em>Created By:
+
+						<span style = "font-weight:bold; color: rgba(71, 117, 209, 1); font-size: 1.15rem;"> 
+
+							<%= blog.createdBy.bloggername %> </span>
+
+						</em>
+					</h4>
+
+					<h5 style = "font-size: 1rem">Published On: <%= blog.created.toDateString() %></h5>
+
+					<p style = "align: justify;"><%= blog.body.substring(0, 180) %>... </p>
+
+					<strong><a style = "float: right; margin-top: -10px;padding-right:12px;" 
+							   href = "/blogs/<%= blog._id %>"> Read More </a>
+					</strong>
+
+				</div>
+
+			</div>
+
+		</div>	
+
+	<% }) %>
+	
+</div>
+
+
+<%- include("partials/footer") %>	
+
