@@ -54,6 +54,7 @@ passport.serializeUser(blogUser.serializeUser());
 passport.deserializeUser(blogUser.deserializeUser());
 
 app.use(function(req, res, next) {
+	
 	res.locals.currentUser = req.user;
 
 	res.locals.error = req.flash('error');
@@ -66,10 +67,15 @@ app.use(function(req, res, next) {
 // Getting Current Blogger data for all the pages:
 
 app.use(function(req, res, next) {
+	
 	blogUser.find({}, function(err, blogUsers) {
+		
 		if (err) {
+			
 			console.log('blog User data not found');
+			
 		} else {
+			
 			res.locals.blogUsers = blogUsers;
 
 			next();
@@ -88,6 +94,7 @@ app.use(crudCommentRoutes);
 // For Regular Listening:
 
 app.listen(3000, () => {
+	
 	console.log('server listening on port 3000');
 });
 
@@ -96,6 +103,7 @@ app.listen(3000, () => {
 var port = process.env.PORT || 5000;
 
 app.listen(port, function (){ 
+	
 	console.log("Server Has Started!");
 });
 
