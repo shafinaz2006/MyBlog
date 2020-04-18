@@ -1,12 +1,12 @@
 const express  		= require('express'),
-	  router 		= express.Router(),
-	  passport 		= require('passport'),
-	  blogData 		= require('../models/blogData'),
-	  blogUser 		= require('../models/blogUser'),
-	  blogComment 	= require('../models/blogComment'),
-	  contactData 	= require('../models/contact'),
-	  middlewareObj = require('../middleware'),
-	  util 			= require('util');
+      router 		= express.Router(),
+      passport 		= require('passport'),
+      blogData 		= require('../models/blogData'),
+      blogUser 		= require('../models/blogUser'),
+      blogComment 	= require('../models/blogComment'),
+      contactData 	= require('../models/contact'),
+      middlewareObj 	= require('../middleware'),
+      util 		= require('util');
 
 //INDEX Routes:
 
@@ -19,8 +19,11 @@ router.get('/blogs', function(req, res) {
 	console.log('inside /blogs link');
 
 	blogData.find({}, function(err, blogs) {
+		
 		if (err) {
+			
 			console.log(err);
+			
 		} else {
 			
 			res.render('index.ejs', { blogs: blogs });
