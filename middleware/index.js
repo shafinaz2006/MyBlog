@@ -3,8 +3,8 @@
 var middlewareObj = {};
 
 var blogData 	= require('../models/blogData'),
-	blogUser 	= require('../models/blogUser'),
-	blogComment	= require('../models/blogComment');
+    blogUser 	= require('../models/blogUser'),
+    blogComment	= require('../models/blogComment');
 
 // Checks if the user is logged in or not:
 
