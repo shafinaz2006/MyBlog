@@ -2,16 +2,12 @@
 	    </div> <!-- PAGE CONTENT COL END -->
 
 		<div class = 'col-md-3 col-sm-12' id = 'third' >  <!-- Right Side Bar Col -->
-			
 			<div class = 'rightBarCol'>
-			
 				<h3 style = 'text-align: center;'> What is happening!!! </h3>
-
 				<ul class = 'list-group'>
-
 					<li> <h4> <strong>CoronaVirus:</strong></h4>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 							 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 							 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 							<br/>
 							<strong> CoronaVirus Update from : 
 							<a href = 'https://www.who.int/health-topics/coronavirus' target = '_blank'> 
@@ -19,7 +15,6 @@
 							</strong>
 						</p>
 					</li>
-
 					<li> <h4> <strong> World News:</strong></h4>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -31,78 +26,41 @@
 							</strong>
 						</p>
 					</li>
-
 				</ul>
-
 				<% if(blogUsers){ %>
-
 					<div >
-
 						<h3 style = 'text-align: center; padding-top: 15px;'> Current Bloggers:</h3>
-
 						<ul style = 'padding-left: 20px;'>
-							
 							<% blogUsers.forEach(function(blogUser){ %>
-
 								<li> <%= blogUser.username %></li>
-
 							<% }) %>
 						</ul>
-						
 					</div>
-
 				<%}%>
 			</div>
 			
 		</div>  <!-- Right Side Bar Col END -->
-
 	<!-- </div>  MAIN BODY END -->
-	
 	</div> <!-- MAIN ROW END -->
-
 	<div class='footerStyle'>
-
 		<div class='footerTextDiv'>
-
 			<span id = 'footerEmail'>Email: shafinaz2006@gmail.com / </span>
-
 			Last Updated on :  <span id='datetime'> </span>
-
 		</div>
-
 	</div>
 
-
 	<script>
-		
 		let dt = new Date();
-		
 		document.querySelector('#datetime').innerHTML = dt.toLocaleDateString();
-		
 		let headRow = document.querySelector('.headRow');
-		
 		let headRowHeight = getComputedStyle(headRow).height;
-		
 		let navbar = document.querySelector('nav');
-		
 		let navbarHeight = getComputedStyle(navbar).height;
-		
-		console.log(headRowHeight + navbarHeight);
-		
 		if(parseInt(headRowHeight.replace('px', '')) > parseInt(navbarHeight.replace('px', ''))){
-			
-			console.log(headRowHeight)
-			
 			document.querySelector('.mainBody').style.marginTop = headRowHeight ;
-			
 		}else{
-			console.log(navbarHeight)
-			
 			document.querySelector('.mainBody').style.marginTop = navbarHeight ;
-		}
-				
-		console.log(getComputedStyle(document.querySelector('.mainBody')).marginTop);
-		
+		}		
 	</script>
 
 
