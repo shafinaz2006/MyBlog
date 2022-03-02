@@ -2,73 +2,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
 	<title>Shafi's Cloud</title>
-	
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
-	
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/
-	font-awesome/4.7.0/css/font-awesome.css'>
-	
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
 	<link rel='stylesheet' type='text/css' href='/blog.css'>
-	
 </head>
 
 <body>
-	
-	<div class='headRow' >  <!-- HEADER ROW -->
-
+	<div class='headRow' > 
 		<div class='row headerImage'>
-
 		   <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-
-			 <h1 class = 'bannerH1'> Shafi's Cloud!! </h1>
-
+			    <h1 class = 'bannerH1'> Shafi's Cloud!! </h1>
 		   </div>
-
 		</div>
-		
 		<div class='row'> 
-
 		   <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-			   
 				<nav class='navbar navbar-expand-md navbarStyle py-0'>
-
 					<a class='navbar-brand' href='/' style = 'color: white;'>Shafi's Cloud</a>
-
 					<button class='navbar-toggler' type='button' data-toggle='collapse' 
 							data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' 
 							aria-expanded='false' aria-label='Toggle navigation' style = 'color: white;'>
-
 						<i class='fa fa-bars fa-lg' aria-hidden='true'></i>
-
 					</button>
-
 					<div class='collapse navbar-collapse' id='navbarSupportedContent'>
-
 						<ul class='navbar-nav mr-auto'>
-
 							<li class='nav-item active'> <a class='nav-link' href='/'>Blogs</a>	</li>
 							<li class='nav-item active'> <a class='nav-link' href='/blogs/new'>Create New</a> </li>
 							<li class='nav-item active '> <a class='nav-link' href='/contact/new'>Contact</a> </li>
-
 						</ul>
-
 						<ul class='nav navbar-nav navbar-right' style = 'padding-right: 25px;' id = 'rightList'>
-
 							<% if(!currentUser){ %>
-
 								<li class='nav-item active'  > 
 									<a class='nav-link' href='/login'> Log in </a>
 								</li>
 								<li class='nav-item active'  > 
 									<a class='nav-link' href='/register'> Register </a>
 								</li>
-
 							<% } else { %>
-
 								<li class='nav-item active'> 
 									<a class='nav-link' href='/'> Current User: 
 										<em><%= currentUser.username %> </em> 
@@ -77,87 +48,54 @@
 								<li class='nav-item active'> 
 									<a class='nav-link' href='/logout'> Log out </a>
 								</li>
-
 							<% } %>
-
 						</ul>
-
 					</div>
-
 				</nav>
-			   
 			</div>
-
 		</div>
-		
-	</div> <!-- HEADER ROW END -->
+	</div> 
 	
 	
 	 <div class = 'row mainBody'> 
-		
 		<!-- <div class='mainBody'> <!-- Main Body DIV After BANNER --> 
-
 			<div class='col-md-3 col-sm-12' id = 'first'> <!-- Side Nav Col -->
-
 				<div class = 'sidenavBox'>   <!-- Side Nav DIV -->
-
 					<h3> About Me </h3>
-					
 					<img src='https://github.com/shafinaz2006/ResumeHeroku/blob/master/linkedInPic.jpg?raw=true' 
 						alt='image'>
-					
 					<p>
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium num doloremque 							laudantium, totam rem aperiam. 
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium num doloremque	laudantium, totam rem aperiam. 
 					</p>
 					<p>
 						More lorem ipsum:
 						iste natus error sit voluptatem accusantium num doloremque laudantium, totam rem aperiam.
 					</p>
-
 					<p>Connect at :
-
 						<a href='https://www.linkedin.com/in/shafinaz-shafique-30947722/'target='_blank'>
-
 							<i class='fa fa-linkedin-square fa-lg'></i>
 						</a>
-
 						<a href='https://github.com/shafinaz2006?tab=repositories' target='_blank' >
-
 							<i class='fa fa-github-square fa-lg'></i>
-
 						</a>
-
 						<a href='https://www.facebook.com/shafinaz.swarna' target='_blank' >
-
 							<i class='fa fa-facebook-square fa-lg'></i>
-
 						</a>
 					</p>
-						
 				</div> <!-- END Of Side Nav DIV -->
-
 			</div> <!-- END Of Side Nav Col -->
-
 			<div class = 'col-md-6 col-sm-12' id = 'second'> <!-- Page Content Col -->
-				
 				<div class = 'alertDiv'>   <!-- ALERT Container -->
-					
 					<% if(error && error.length > 0){ %>
-
 					<div class='alert alert-danger' role='alert'>
 						<p style = 'text-align: center; margin-bottom: 0px;'><%= error %></p> 
 					</div>
-
 					<% } %>
-
 					<% if(success && success.length > 0){ %>
-
 						<div class='alert alert-success' role='alert'>
 							<p style = 'text-align: center; margin-bottom: 0px;'><%= success %> </p>
 						</div>
-
 					<% } %>
-					
 				</div> <!-- ALERT Container END -->
 				
 				
